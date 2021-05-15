@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:madiba_app/activities/all.book.detail.dart';
 import 'package:madiba_app/screens/data/all.familly.books.dart';
 
 import 'package:madiba_app/screens/models/all.family.books.dart';
@@ -18,11 +19,17 @@ class AllFamilyBookswidget extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: _allFamillyBooksPojo.length,
           itemBuilder: (BuildContext context, int index) {
-            return AllIndividualBookCard(
-                _allFamillyBooksPojo[index].title,
-                _allFamillyBooksPojo[index].author,
-                _allFamillyBooksPojo[index].imagePath,
-                _allFamillyBooksPojo[index].numberOfItems);
+            return GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => AllBookDetail()));
+              },
+              child: AllIndividualBookCard(
+                  _allFamillyBooksPojo[index].title,
+                  _allFamillyBooksPojo[index].author,
+                  _allFamillyBooksPojo[index].imagePath,
+                  _allFamillyBooksPojo[index].numberOfItems),
+            );
           }),
     );
   }

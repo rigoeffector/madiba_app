@@ -103,7 +103,7 @@ class _FreqTakenBookDetailState extends State<FreqTakenBookDetail> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    "10000 RWF",
+                    "Amanda MUTON",
                     style: TextStyle(
                         color: Colors.orangeAccent,
                         fontSize: 20.0,
@@ -116,12 +116,35 @@ class _FreqTakenBookDetailState extends State<FreqTakenBookDetail> {
                         border: Border.all(color: Colors.blueGrey),
                         borderRadius: BorderRadius.circular(10.0)),
                     child: Center(
-                      child: Text(
-                        "Borrow book",
-                        style: TextStyle(
-                            color: Colors.orangeAccent,
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w900),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5.0),
+                        child: TextButton(
+                          style: ButtonStyle(
+                              shadowColor: MaterialStateProperty.all<Color>(
+                                  Colors.blueGrey),
+                              foregroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.blue[300]),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.lightBlue[900]),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                      side: BorderSide(
+                                          color: Colors.lightBlue[50])))),
+                          onPressed: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: Text(
+                                'Borrow Book ',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18.0),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   )

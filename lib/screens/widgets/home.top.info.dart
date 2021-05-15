@@ -17,10 +17,6 @@ class Hometopinfowidget extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Theme.of(context).primaryColor),
             ),
-            Text(
-              'Collections',
-              style: TextStyle(fontSize: 29.0, color: Colors.blueGrey),
-            )
           ],
         ),
         Icon(

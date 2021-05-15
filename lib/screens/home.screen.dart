@@ -32,21 +32,11 @@ class _HomescreenState extends State<Homescreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Frequently Taken Books",
+                  "Recommended books for you",
                   style: TextStyle(
                       fontSize: 17.0,
                       fontWeight: FontWeight.w900,
                       color: Colors.blueGrey),
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: Text(
-                    "View All",
-                    style: TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w900,
-                        color: Theme.of(context).primaryColor),
-                  ),
                 ),
               ],
             ),

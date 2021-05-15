@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:madiba_app/activities/all.book.detail.dart';
 import 'package:madiba_app/screens/widgets/new.book.collection.card.dart';
 
 import '../data/new.book.collection.dart';
@@ -17,11 +18,17 @@ class Newbookcollectionwidget extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: _newbookcollection.length,
           itemBuilder: (BuildContext context, int index) {
-            return Newbookcollectioncard(
-                _newbookcollection[index].title,
-                _newbookcollection[index].author,
-                _newbookcollection[index].imagePath,
-                _newbookcollection[index].numberOfItems);
+            return GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (BuildContext context) => AllBookDetail()));
+              },
+              child: Newbookcollectioncard(
+                  _newbookcollection[index].title,
+                  _newbookcollection[index].author,
+                  _newbookcollection[index].imagePath,
+                  _newbookcollection[index].numberOfItems),
+            );
           }),
     );
   }
