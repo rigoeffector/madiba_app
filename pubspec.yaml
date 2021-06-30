@@ -20,9 +20,10 @@ version: 1.0.0+1
 environment:
   sdk: ">=2.7.0 <3.0.0"
 
+  
+
 dependencies:
   http: ^0.13.3
-  json_annotation: ^4.0.1
   select_form_field: "^2.0.0"
   flutter:
     sdk: flutter
@@ -31,20 +32,21 @@ dependencies:
     sdk: flutter 
   audioplayer: 0.8.1
   audioplayer_web: 0.7.1
-  flutterwave: ^0.0.3-dev.2
-  video_player: ^2.1.1
-  path_provider:
+  flutterwave: ^0.0.3-dev.4
+  video_player: ^2.1.6
+  built_value: ^8.1.0
+  path_provider: ^2.0.2
   # assets_audio_player: ^3.0.3+3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
- 
+  json_annotation: ^4.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  json_serializable: ^4.1.1
   # flutter_native_splash: ^1.1.8+4
+ 
 
   
 # For information on the generic Dart part of this file, see the

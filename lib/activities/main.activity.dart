@@ -1,7 +1,11 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:madiba_app/activities/signIn.dart';
 import 'package:madiba_app/activities/signup.dart';
+import 'package:http/http.dart' as http;
+import 'package:madiba_app/constants/server.dart';
+import 'package:madiba_app/screens/models/category.dart';
 
 import 'package:madiba_app/screens/models/slider.item.dart';
 import 'package:madiba_app/screens/widgets/slide.dot.dart';
@@ -13,12 +17,28 @@ class HomePageActivity extends StatefulWidget {
 }
 
 class _HomePageActivityState extends State<HomePageActivity> {
+  var url = Url + "user/read.user.category.php";
+  Future<UserCategory> fetchUserCategory() async {
+    final response = await http.get(Uri.parse(url));
+
+    if (response.statusCode == 200) {
+      print(jsonDecode(response.body));
+      return UserCategory.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to load userCategory');
+    }
+  }
+
   final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
+
+  Future<UserCategory> futerUserCategory;
 
   @override
   void initState() {
     super.initState();
+
+    futerUserCategory = fetchUserCategory();
 
     Timer.periodic(Duration(seconds: 3), (Timer timer) {
       if (_currentPage < 4) {

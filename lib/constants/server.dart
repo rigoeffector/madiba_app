@@ -1,1 +1,1 @@
-const Url = "http://library.sokoyenu.com/api/";
+const Url = "http://localhost/madiba_panel/madiba_server/api/";
